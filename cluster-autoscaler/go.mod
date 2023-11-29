@@ -1,6 +1,8 @@
 module k8s.io/autoscaler/cluster-autoscaler
 
-go 1.21
+go 1.21.3
+
+toolchain go1.21.4
 
 require (
 	cloud.google.com/go/compute/metadata v0.2.3
@@ -11,7 +13,7 @@ require (
 	github.com/Azure/go-autorest/autorest/date v0.3.0
 	github.com/Azure/go-autorest/autorest/to v0.4.0
 	github.com/Azure/skewer v0.0.14
-	github.com/aws/aws-sdk-go v1.44.241
+	github.com/aws/aws-sdk-go v1.48.6
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/digitalocean/godo v1.27.0
 	github.com/gofrs/uuid v4.4.0+incompatible
@@ -40,6 +42,7 @@ require (
 	k8s.io/api v0.29.0-alpha.3
 	k8s.io/apimachinery v0.29.0-alpha.3
 	k8s.io/apiserver v0.29.0-alpha.3
+	k8s.io/autoscaler/cluster-autoscaler/cloudprovider/aws/aws-sdk-go v0.0.0-00010101000000-000000000000
 	k8s.io/client-go v0.29.0-alpha.3
 	k8s.io/cloud-provider v0.29.0-alpha.3
 	k8s.io/cloud-provider-aws v1.27.0

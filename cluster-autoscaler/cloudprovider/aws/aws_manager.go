@@ -76,6 +76,8 @@ func createAWSManagerInternal(
 	awsService *awsWrapper,
 	instanceTypes map[string]*InstanceType,
 ) (*AwsManager, error) {
+	klog.Infof("AWS SDK Version: %s", aws.SDKVersion)
+
 	if awsService == nil {
 		sess := awsSDKProvider.session
 		awsService = &awsWrapper{autoscaling.New(sess), ec2.New(sess), eks.New(sess)}
@@ -109,6 +111,7 @@ func createAWSManagerInternal(
 
 // CreateAwsManager constructs awsManager object.
 func CreateAwsManager(awsSDKProvider *awsSDKProvider, discoveryOpts cloudprovider.NodeGroupDiscoveryOptions, instanceTypes map[string]*InstanceType) (*AwsManager, error) {
+
 	return createAWSManagerInternal(awsSDKProvider, discoveryOpts, nil, instanceTypes)
 }
 
